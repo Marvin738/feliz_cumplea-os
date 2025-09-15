@@ -35,8 +35,6 @@ body {
   align-items: center;
   justify-content: center;
   color: #fff;
-  padding: 0 20px; /* Añadido para que el texto no pegue a los bordes */
-  text-align: center; /* Añadido para centrar el texto */
 }
 
 .left-slide h1 {
@@ -56,7 +54,7 @@ body {
 
 .right-slide > div {
   background-repeat: no-repeat;
-  background-size: cover; /* Cambiado de contain a cover para llenar el espacio */
+  background-size: cover;
   background-position: center center;
   height: 100%;
   width: 100%;
@@ -98,31 +96,32 @@ button:focus {
   border-bottom-right-radius: 5px;
 }
 
-/* --- ESTILOS PARA CELULAR --- */
+/* --- ESTILOS PARA CELULAR (CORREGIDOS) --- */
 @media (max-width: 800px) {
   .left-slide {
     width: 100%;
-    z-index: 2; /* Para que el texto se ponga sobre la imagen */
+    z-index: 2;
+    /* Centramos la caja de texto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 
+  /* La caja que contiene el texto */
   .left-slide > div {
-     background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente para legibilidad */
-     padding: 20px;
-     border-radius: 10px;
-     width: 90%; /* Hacemos el contenedor del texto un poco más pequeño */
-     height: auto; /* La altura se ajusta al contenido */
-  }
-  
-  .left-slide h1 {
-    font-size: 30px; /* Reducimos el tamaño del título */
+    height: auto; /* Altura automática */
+    width: 90%; /* Ocupará el 90% del ancho de la pantalla */
+    max-width: 500px; /* Un ancho máximo para que no se estire demasiado */
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro para legibilidad */
+    padding: 20px;
+    border-radius: 10px;
   }
 
-  .right-slide {
-    left: 0; /* La sección de la imagen empieza desde la izquierda */
-    width: 100%; /* Ocupa todo el ancho */
+  .left-slide h1 {
+    /* Tamaño de letra que se ajusta al ancho de la pantalla */
+    font-size: 7vw;
   }
   
-  .slider-container .action-buttons button {
-    left: 50%; /* Centramos los botones */
-  }
-}
+  .left-slide p {
+      /* Tamaño de letra que se ajusta al ancho de la pantalla */
